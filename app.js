@@ -7,12 +7,14 @@ const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const tiles = L.tileLayer(tileUrl, {attribution});
 tiles.addTo(mymap);
 
+//making satellite icon
 const satelliteIcon = L.icon({
     iconUrl: 'iss-image.png',
     iconSize: [50, 50],
     iconAnchor: [25, 25],
 });
 
+//creating the marker on the map
 let satelliteMarker = L.marker([0, 0], {icon: satelliteIcon}).addTo(mymap);
 
 
@@ -29,6 +31,10 @@ async function fetchData() {
 
         satelliteMarker.setLatLng([data.latitude, data.longitude]);
 
+        // center the satellite in the map and the view changes while satellite moving
+        mymap.setView(L.latLng(data.latitude, data.longitude), mymap.getZoom());
+
+        // drawing a circle to indicate the path of the satellite
         L.circle([data.latitude, data.longitude], {
             color: 'red',
             fillColor: '#f03',
@@ -38,11 +44,13 @@ async function fetchData() {
 
 
     } catch (error) {
-        console.log('Maximum amount of request per second reached!');
+        console.clear();
+        console.log('This error may be because of that maximum amount of request per second reached. Report otherwise');
+        console.log(error);
     }
 
 
 }
 
-setInterval(fetchData, 1500);
+setInterval(fetchData, 2500);
 
