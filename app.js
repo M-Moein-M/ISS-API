@@ -21,7 +21,14 @@ async function fetchData() {
         document.getElementById('latitude').innerText = 'latitude: ' + data.latitude;
         document.getElementById('velocity').innerText = 'velocity: ' + data.velocity + '\nunits: ' + data.units;
 
-        satelliteMarker.setLatLng([data.longitude, data.latitude]);
+        satelliteMarker.setLatLng([data.latitude, data.longitude]);
+
+        L.circle([data.latitude, data.longitude], {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: 100
+        }).addTo(mymap);
 
 
     } catch (error) {

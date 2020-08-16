@@ -11,21 +11,24 @@
             integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
             crossorigin=""></script>
     <style>
-        #map{ height: 400px; width: 600px}
+        #map {
+            height: 600px;
+            width: 600px
+        }
     </style>
 </head>
 <body>
-<div>
-    <h1>Position of ISS</h1>
-    <p id="latitude">Loading data from the API...</p>
-    <p id="longitude">Loading data from the API...</p>
-    <p id="velocity">Loading data from the API...</p>
+<div style="display: flex; justify-content: space-around">
+    <div>
+        <h1>Position of ISS</h1>
+        <p id="latitude">Loading data from the API...</p>
+        <p id="longitude">Loading data from the API...</p>
+        <p id="velocity">Loading data from the API...</p>
+    </div>
+
+    <div id="map">
+    </div>
 </div>
-
-<div id="map">
-
-</div>
-
 <script src="app.js"></script>
 
 </body>
