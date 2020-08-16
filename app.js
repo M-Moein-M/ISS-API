@@ -7,7 +7,13 @@ const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const tiles = L.tileLayer(tileUrl, {attribution});
 tiles.addTo(mymap);
 
-let satelliteMarker = L.marker([0, 0]).addTo(mymap);
+const satelliteIcon = L.icon({
+    iconUrl: 'iss-image.png',
+    iconSize: [50, 50],
+    iconAnchor: [25, 25],
+});
+
+let satelliteMarker = L.marker([0, 0], {icon: satelliteIcon}).addTo(mymap);
 
 
 // handling the api requests
