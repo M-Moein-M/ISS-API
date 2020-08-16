@@ -3,14 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+            crossorigin=""></script>
+    <style>
+        #map{ height: 400px; width: 600px}
+    </style>
 </head>
 <body>
 <div>
     <h1>Position of ISS</h1>
-    <p id="latitude">Loading...</p>
-    <p id="longitude">Loading...</p>
-    <p id="velocity">Loading...</p>
+    <p id="latitude">Loading data from the API...</p>
+    <p id="longitude">Loading data from the API...</p>
+    <p id="velocity">Loading data from the API...</p>
 </div>
+
+<div id="map">
+
+</div>
+
 <script src="app.js"></script>
 
 </body>
